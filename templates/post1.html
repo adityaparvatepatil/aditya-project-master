@@ -1,0 +1,13 @@
+<html>
+<body>
+<form action="enter-comment" method = "POST">
+<input type="text" name="name" placeholder="Enter your name here"><br>
+<input type="text" name="comment" placeholder="Enter comment here"><br>
+<input type="hidden" name="postnum" value="post1"> 
+<input type="submit" value="Submit">
+</form>
+
+<!-- This is the section where we view comments -->
+
+<h1> Comment section </h1>
+{{data | safe}}
