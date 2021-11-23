@@ -4,7 +4,12 @@ import sqlite3
 
 app = Flask(__name__)
 conn = sqlite3.connect('database.db',check_same_thread=False,isolation_level=None)
-cur = conn.cursor()
+'''
+check_same_thread => THIS IS SO THAT FLASK DOES NOT OPEN MULTIPLE THREADS TO EXECUTE QUERIES, CAUSING ERROR
+isolation_level => ENABLES AUTO COMMIT WHEN YOU EXECUTE INSERT STATEMENTS
+'''
+cur = conn.cursor() 
+
 
 @app.route('/',methods=['GET','POST'])
 def index():
