@@ -80,7 +80,7 @@ def article6():
 
 @app.route('/enter-comment',methods=['POST'])
 def enter_comment():
-    data = request.form #This is in json
+    data = request.form #This is in json  {'comment':'val1','postnum':'val2','name':'val3'}
     comment = str(data['comment'])
     postnum = str(data['postnum'])
     name = str(data['name'])
