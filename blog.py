@@ -47,6 +47,32 @@ def article3():
     #return render_template('post1.html',data=comment)
     return render_template('article3.html',data=comment,length=len(comment))
 
+@app.route('/article4',methods=['GET','POST'])
+def article4():
+    cur.execute('select name,comment from comments where post like "article4";')
+    res = cur.fetchall()
+    comment = list(res) # [0][0])
+    #return render_template('post1.html',data=comment)
+    return render_template('article4.html',data=comment,length=len(comment))
+
+
+@app.route('/article5',methods=['GET','POST'])
+def article5():
+    cur.execute('select name,comment from comments where post like "article5";')
+    res = cur.fetchall()
+    comment = list(res) # [0][0])
+    #return render_template('post1.html',data=comment)
+    return render_template('article5.html',data=comment,length=len(comment))
+
+
+@app.route('/article6',methods=['GET','POST'])
+def article6():
+    cur.execute('select name,comment from comments where post like "article6";')
+    res = cur.fetchall()
+    comment = list(res) # [0][0])
+    #return render_template('post1.html',data=comment)
+    return render_template('article6.html',data=comment,length=len(comment))
+
 @app.route('/enter-comment',methods=['POST'])
 def enter_comment():
     data = request.form #This is in json
